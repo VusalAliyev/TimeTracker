@@ -1,5 +1,7 @@
 using TimeTracker.Infrastructure;
 using TimeTracker.Application;
+using TimeTracker.Application.Common;
+using TimeTracker.WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +13,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddApplicationServices();
+builder.Services.AddScoped<IReminderBy, ReminderBy>();
 
 var app = builder.Build();
 
