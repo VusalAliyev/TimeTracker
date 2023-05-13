@@ -11,7 +11,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Domain", "src\T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Infrastructure", "TimeTracker.Infrastructure\TimeTracker.Infrastructure.csproj", "{F26BC2CF-AA3A-4A6E-9407-FD04121F7B0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.Application", "src\TimeTracker.Application\TimeTracker.Application.csproj", "{BD724732-8597-482B-BFE8-B3F2C17C8E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TimeTracker.Application", "src\TimeTracker.Application\TimeTracker.Application.csproj", "{BD724732-8597-482B-BFE8-B3F2C17C8E70}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{4C99911A-7C2F-4897-8B62-7B7C2C15E2A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimeTracker.WebUI", "UI\TimeTracker.WebUI\TimeTracker.WebUI.csproj", "{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +39,10 @@ Global
 		{BD724732-8597-482B-BFE8-B3F2C17C8E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD724732-8597-482B-BFE8-B3F2C17C8E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD724732-8597-482B-BFE8-B3F2C17C8E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +52,7 @@ Global
 		{CFCE0F13-E571-4864-828F-3D1CAC8D547F} = {9E3AF9F4-3A27-4791-82CF-C33D2F985AB5}
 		{F26BC2CF-AA3A-4A6E-9407-FD04121F7B0B} = {9E3AF9F4-3A27-4791-82CF-C33D2F985AB5}
 		{BD724732-8597-482B-BFE8-B3F2C17C8E70} = {9E3AF9F4-3A27-4791-82CF-C33D2F985AB5}
+		{0C1AF1AB-4F83-4E56-9B36-2C421AACBEB5} = {4C99911A-7C2F-4897-8B62-7B7C2C15E2A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C15E6712-62F5-4873-89B6-80B091C19F52}
