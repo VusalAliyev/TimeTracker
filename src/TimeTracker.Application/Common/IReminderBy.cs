@@ -8,7 +8,7 @@ namespace TimeTracker.Application.Common
 {
     public interface IReminderBy
     {
-        void RemindByTelegram();
+        Task RemindByTelegram(string to, string content);
         void RemindByEmail(string to,string content);
     }
 }

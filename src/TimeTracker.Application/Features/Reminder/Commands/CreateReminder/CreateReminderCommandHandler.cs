@@ -27,17 +27,28 @@ namespace TimeTracker.Application.Features.Reminder.Commands.AddReminder
             {
                 To = request.To,
                 Content = request.Content,
-                MethodType=request.MethodType,
+                MethodType = request.MethodType,
                 SendAt = request.SendAt
             });
 
-            _reminderBy.RemindByEmail(request.To,request.Content);
+            switch (request.MethodType)
+            {
+                case Domain.Enums.MethodType.Telegram:
+                    _reminderBy.RemindByTelegram(request.To, request.Content);
+                    break;
+                case Domain.Enums.MethodType.Email:
+                    _reminderBy.RemindByEmail(request.To, request.Content);
+                    break;
+                default:
+                    break;
+            }
+
 
             _context.SaveChangesAsync();
 
             return new CreateReminderCommandResponse
             {
-                IsSuccess=true
+                IsSuccess = true
             };
         }
     }

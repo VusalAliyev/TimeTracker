@@ -1,4 +1,5 @@
 ﻿using System.Net.Mail;
+using Telegram.Bot;
 using TimeTracker.Application.Common;
 
 namespace TimeTracker.WebAPI.Services
@@ -23,9 +24,12 @@ namespace TimeTracker.WebAPI.Services
             SmtpServer.Send(mail);
         }
 
-        public void RemindByTelegram()
+        public async Task RemindByTelegram(string to, string content)
         {
-            throw new NotImplementedException();
+            var botClient = new TelegramBotClient("6231901561:AAHae7i-RGGWNTJGR2xdSV4VZPn__zUKY30");
+            await botClient.GetUpdatesAsync();
+
+            await botClient.SendTextMessageAsync(int.Parse(to), content);
         }
     }
 }
