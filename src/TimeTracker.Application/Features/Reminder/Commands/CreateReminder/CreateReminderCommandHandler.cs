@@ -33,18 +33,19 @@ namespace TimeTracker.Application.Features.Reminder.Commands.AddReminder
                 SendAt = request.SendAt
             });
 
-          
 
-            
+
+           
+
 
             switch (request.MethodType)
             {
                 case Domain.Enums.MethodType.Telegram:
-                    BackgroundJob.Schedule(() => _reminderBy.RemindByTelegram(request.To, request.Content), new DateTime(2023, 5, 14, 17, 42 , 0, DateTimeKind.Local));
+                    BackgroundJob.Schedule(() => _reminderBy.RemindByTelegram(request.To, request.Content), new DateTime(request.SendAt.Year, request.SendAt.Month, request.SendAt.Day, request.SendAt.Hour, request.SendAt.Minute, 0, DateTimeKind.Local));
                     //_reminderBy.RemindByTelegram(request.To, request.Content);
                     break;
                 case Domain.Enums.MethodType.Email:
-                    BackgroundJob.Schedule(() => _reminderBy.RemindByEmail(request.To, request.Content), new DateTime(2023, 5, 14, 16, 44, 0, DateTimeKind.Local));
+                    BackgroundJob.Schedule(() => _reminderBy.RemindByEmail(request.To, request.Content), new DateTime(request.SendAt.Year, request.SendAt.Month, request.SendAt.Day, request.SendAt.Hour, request.SendAt.Minute, 0, DateTimeKind.Local));
                     //_reminderBy.RemindByEmail(request.To, request.Content);
                     break;
                 default:
