@@ -1,6 +1,8 @@
-﻿using MediatR;
+﻿using Hangfire;
+using MediatR;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,13 +33,19 @@ namespace TimeTracker.Application.Features.Reminder.Commands.AddReminder
                 SendAt = request.SendAt
             });
 
+          
+
+            
+
             switch (request.MethodType)
             {
                 case Domain.Enums.MethodType.Telegram:
-                    _reminderBy.RemindByTelegram(request.To, request.Content);
+                    BackgroundJob.Schedule(() => _reminderBy.RemindByTelegram(request.To, request.Content), new DateTime(2023, 5, 14, 17, 42 , 0, DateTimeKind.Local));
+                    //_reminderBy.RemindByTelegram(request.To, request.Content);
                     break;
                 case Domain.Enums.MethodType.Email:
-                    _reminderBy.RemindByEmail(request.To, request.Content);
+                    BackgroundJob.Schedule(() => _reminderBy.RemindByEmail(request.To, request.Content), new DateTime(2023, 5, 14, 16, 44, 0, DateTimeKind.Local));
+                    //_reminderBy.RemindByEmail(request.To, request.Content);
                     break;
                 default:
                     break;
