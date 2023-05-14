@@ -34,10 +34,6 @@ namespace TimeTracker.Application.Features.Reminder.Commands.AddReminder
             });
 
 
-
-           
-
-
             switch (request.MethodType)
             {
                 case Domain.Enums.MethodType.Telegram:
